@@ -30,7 +30,7 @@ As fontes Google são opcionais: se indisponíveis, a interface usa fontes locai
 
 ## Histórico gamificado
 
-A seção Histórico oferece filtros de 7, 30 ou 90 dias e por hábito, gráfico diário clicável, XP (10 por conclusão), níveis (100 XP por nível), conquistas e sugestões de revisão. Redefinir um hábito mantém os registros. As taxas usam a frequência atual desde a criação; hábitos legados sem data de criação usam o primeiro registro disponível. Hoje entra na análise e pode estar pendente. XP é recalculado a partir dos registros existentes, sem pontuação duplicada ao marcar/desmarcar.
+A seção Histórico oferece filtros de semana (7 dias), mês (30), trimestre (90) ou ano (365) e por hábito, gráfico diário clicável, XP (10 por conclusão), níveis (100 XP por nível), conquistas e sugestões de revisão. Redefinir um hábito mantém os registros. As taxas usam a frequência atual desde a criação; hábitos legados sem data de criação usam o primeiro registro disponível. Hoje entra na análise e pode estar pendente. XP é recalculado a partir dos registros existentes, sem pontuação duplicada ao marcar/desmarcar.
 
 
 ## Banco de dados e contas (Supabase)
@@ -53,3 +53,14 @@ Após configurar o serviço, teste cadastro/confirmação/login, crie e marque u
 ## Aparência
 
 O seletor de tema no cabeçalho, nas configurações e no login oferece Claro, Escuro e Sistema. Sistema acompanha `prefers-color-scheme`, incluindo mudanças enquanto o site está aberto. A escolha é salva por navegador, separada dos dados da conta. No celular, uma barra inferior oferece acesso às seções principais. O script `public/theme-init.js` aplica a preferência antes da inicialização da interface para reduzir o flash do tema incorreto.
+
+
+## Metas, sessões e programas
+
+Em Novo hábito/Editar hábito, configure horário opcional e uma meta em minutos, copos, páginas, passos, vezes ou ml. No dia escolhido, clique na quantidade/barra para registrar progresso parcial. Ao atingir a meta, o dia conta como concluído; o botão de conclusão também preenche a meta inteira. Os horários ordenam a rotina, sem enviar notificações.
+
+Hábitos em minutos oferecem **Iniciar sessão**: temporizador com pausa e registro do tempo realizado, adicionado ao progresso existente. A sessão precisa ser salva e não sobrevive a recarregar/fechar a página. Apenas conclusões completas geram XP. Alterar metas preserva os registros anteriores.
+
+**Programas** permite buscar e filtrar rotinas de foco, movimento, aprendizado, criatividade e bem-estar. Adicionar um programa cria seus hábitos diários com metas e horários; nomes já existentes não são duplicados. Depois, ajuste dias, metas e horários em Hábitos.
+
+O Histórico mostra barras por categoria, conclusão média e comparação em pontos percentuais com o período anterior (quando ambos têm dados). No ano, o gráfico agrupa os registros por mês; cada barra abre o último dia daquele mês incluído no período. Os novos campos são preservados no Supabase e nos backups, sem nova migração SQL.

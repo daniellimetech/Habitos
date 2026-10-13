@@ -13,6 +13,6 @@ export async function saveCloud(client,habits,revision){
 }
 export function mergeHabits(remote,local){
  const existing=new Map(remote.map(h=>[h.id,h]));
- for(const h of local){const old=existing.get(h.id);existing.set(h.id,old?{...old,logs:[...new Set([...old.logs,...h.logs])]}:h);}
+ for(const h of local){const old=existing.get(h.id);existing.set(h.id,old?{...old,logs:[...new Set([...old.logs,...h.logs])],...((old.progress||h.progress)?{progress:Object.fromEntries([...new Set([...Object.keys(old.progress||{}),...Object.keys(h.progress||{})])].map(d=>[d,Math.max(old.progress?.[d]||0,h.progress?.[d]||0)]))}:{})}:h);}
  return validateImport([...existing.values()]);
 }
