@@ -1,0 +1,18 @@
+import React,{useState,useEffect} from 'react';
+import {Leaf} from 'lucide-react';
+import {cloud,cloudError} from './cloud.js';
+export default function Account({children}){
+ const [session,setSession]=useState(null),[loading,setLoading]=useState(!!cloud),[error,setError]=useState('');
+ useEffect(()=>{if(!cloud)return;let active=true;cloud.auth.getSession().then(({data,error})=>{if(active){setSession(data.session);setError(error?'Não foi possível recuperar sua sessão.':'');setLoading(false);}}).catch(()=>{if(active){setLoading(false);setError('Não foi possível recuperar sua sessão.');}});const {data}=cloud.auth.onAuthStateChange((_event,s)=>{if(active){setSession(s);setLoading(false);}});return ()=>{active=false;data.subscription.unsubscribe();};},[]);
+ if(cloudError)return <div className="account-screen"><div className="modal"><h2>Configuração da conta</h2><p role="alert">{cloudError}</p></div></div>;
+ if(!cloud)return children(null);
+ if(loading)return <div className="account-screen" role="status">Carregando sua conta…</div>;
+ if(session)return children(session.user);
+ return <Login error={error}/>;
+}
+function Login({error:initialError}){
+ const [mode,setMode]=useState('login'),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState(initialError);
+ async function submit(e){e.preventDefault();setBusy(true);setMessage('');try{const credentials={email:email.trim(),password};const result=mode==='signup'?await cloud.auth.signUp({...credentials,options:{emailRedirectTo:window.location.origin}}):await cloud.auth.signInWithPassword(credentials);if(result.error)throw result.error;if(mode==='signup'&&!result.data.session)setMessage('Confira seu e-mail para confirmar o cadastro. Depois, entre na sua conta.');}catch(e){setMessage(e.code==='invalid_credentials'?'E-mail ou senha incorretos.':e.code==='email_not_confirmed'?'Confirme seu e-mail antes de entrar.':'Não foi possível continuar. Verifique os dados, a conexão e tente novamente.');}finally{setBusy(false);}}
+ async function reset(){if(!email.trim()){setMessage('Preencha seu e-mail para receber o link de acesso.');return;}setBusy(true);try{const {error}=await cloud.auth.signInWithOtp({email:email.trim(),options:{shouldCreateUser:false,emailRedirectTo:window.location.origin}});if(error)throw error;setMessage('Se o e-mail estiver cadastrado, você receberá um link para entrar sem senha.');}catch{setMessage('Não foi possível enviar o link. Tente novamente.');}finally{setBusy(false);}}
+ return <div className="account-screen"><form className="modal login-form" onSubmit={submit}><div className="brand"><span><Leaf/></span>ritmo.</div><h2>{mode==='login'?'Seu ritmo, em qualquer lugar':'Comece sua jornada'}</h2><p>Entre na sua conta para guardar hábitos, histórico e conquistas na nuvem.</p><label>E-mail<input required type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)}/></label><label>Senha<input required type="password" minLength={6} autoComplete={mode==='signup'?'new-password':'current-password'} value={password} onChange={e=>setPassword(e.target.value)}/></label>{message&&<p className="notice" role="status">{message}</p>}<button className="primary" disabled={busy}>{busy?'Aguarde…':mode==='login'?'Entrar':'Criar conta'}</button><button className="text-button" type="button" disabled={busy} onClick={()=>{setMode(mode==='login'?'signup':'login');setMessage('');}}>{mode==='login'?'Não tenho conta — cadastrar':'Já tenho conta — entrar'}</button>{mode==='login'&&<button className="text-button" type="button" disabled={busy} onClick={reset}>Receber link de acesso por e-mail</button>}</form></div>;
+}

@@ -20,14 +20,32 @@ npm run build
 
 1. Na Vercel, escolha **Add New → Project** e importe `daniellimetech/Habitos`.
 2. Selecione o preset **Vite**, comando de build `npm run build` e diretório de saída `dist`.
-3. Clique em **Deploy**. Não são necessárias variáveis de ambiente.
+3. Clique em **Deploy**. Configure as variáveis do Supabase conforme abaixo para ativar as contas e o banco de dados. Sem ambas, o app continua em modo local.
 
 ## Dados
 
-Os dados são armazenados em `localStorage` no navegador. Não há login nem sincronização entre dispositivos. Em **Configurações**, exporte e importe backups JSON. Novos usuários recebem sugestões de hábitos sem registros fictícios. Registros futuros não são permitidos; dias anteriores podem ser atualizados pelo calendário. A sequência conta os dias programados consecutivos e permite que o dia atual ainda esteja pendente.
+Com Supabase configurado, os dados são armazenados no PostgreSQL por usuário autenticado e podem ser acessados em outros dispositivos. Sem configuração, o app mantém o modo local em `localStorage`. Em **Configurações**, exporte e importe backups JSON. Novos usuários recebem sugestões de hábitos sem registros fictícios. Registros futuros não são permitidos; dias anteriores podem ser atualizados pelo calendário. A sequência conta os dias programados consecutivos e permite que o dia atual ainda esteja pendente.
 
 As fontes Google são opcionais: se indisponíveis, a interface usa fontes locais do sistema.
 
 ## Histórico gamificado
 
 A seção Histórico oferece filtros de 7, 30 ou 90 dias e por hábito, gráfico diário clicável, XP (10 por conclusão), níveis (100 XP por nível), conquistas e sugestões de revisão. Redefinir um hábito mantém os registros. As taxas usam a frequência atual desde a criação; hábitos legados sem data de criação usam o primeiro registro disponível. Hoje entra na análise e pode estar pendente. XP é recalculado a partir dos registros existentes, sem pontuação duplicada ao marcar/desmarcar.
+
+
+## Banco de dados e contas (Supabase)
+
+1. No seu projeto Supabase, abra **SQL Editor** e execute [supabase/schema.sql](supabase/schema.sql). O script cria a tabela `habit_accounts`, políticas de isolamento por usuário (RLS) e a função de gravação atômica; é reaplicável e não apaga os dados.
+2. Em **Authentication → Providers**, habilite **Email**. Mantenha a confirmação de e-mail habilitada. Configure **URL Configuration**: Site URL e Redirect URLs com a URL de produção da Vercel e, se necessário, `http://localhost:5173` para desenvolvimento.
+3. Nas configurações do projeto, copie a URL e a chave **publishable** (ou a antiga chave **anon**).
+4. Na Vercel, em **Settings → Environment Variables**, adicione `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY` nos ambientes desejados e faça um novo deploy. A chave anon também é aceita como `VITE_SUPABASE_ANON_KEY`. Essas chaves públicas entram no bundle; **nunca configure service_role, secret key ou senha do banco no frontend**.
+5. Para desenvolvimento local, copie `.env.example` para `.env.local`, preencha a URL e chave pública e reinicie `npm run dev`.
+6. Cadastre-se, confirme o e-mail e entre. A conta começa vazia. No mesmo navegador que já tinha dados, use **Migrar dados locais**; o backup local fica preservado e a importação exige confirmação. IDs existentes mantêm a configuração da nuvem e recebem a união dos registros, evitando duplicação. Backups JSON também continuam disponíveis.
+
+O banco guarda um documento JSON de hábitos e registros por conta, com versão para prevenir sobrescritas entre dispositivos. As alterações só são confirmadas após gravação bem-sucedida. Se aparecer conflito, atualize os dados e repita a alteração. Use **Configurações → Atualizar dados da nuvem** ou recarregue para buscar mudanças de outro dispositivo (não há atualização em tempo real ou gravação offline).
+
+O botão de link por e-mail permite acessar uma conta existente sem senha. Enviar e-mails depende da configuração/limites do Supabase; configure SMTP para produção quando necessário. Apagar os hábitos não apaga a conta de autenticação.
+
+### Validação no projeto real
+
+Após configurar o serviço, teste cadastro/confirmação/login, crie e marque um hábito, recarregue e entre em outro navegador com a mesma conta. Confira o histórico. Use uma segunda conta para verificar que ela começa vazia e não lê os dados da primeira. Abra a mesma conta em duas abas, altere na primeira e tente salvar na segunda sem atualizar: deve aparecer conflito sem sobrescrever os dados. Teste migração local, exportação e logout.
