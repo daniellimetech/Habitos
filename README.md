@@ -49,3 +49,7 @@ O botão de link por e-mail permite acessar uma conta existente sem senha. Envia
 ### Validação no projeto real
 
 Após configurar o serviço, teste cadastro/confirmação/login, crie e marque um hábito, recarregue e entre em outro navegador com a mesma conta. Confira o histórico. Use uma segunda conta para verificar que ela começa vazia e não lê os dados da primeira. Abra a mesma conta em duas abas, altere na primeira e tente salvar na segunda sem atualizar: deve aparecer conflito sem sobrescrever os dados. Teste migração local, exportação e logout.
+
+## Aparência
+
+O seletor de tema no cabeçalho, nas configurações e no login oferece Claro, Escuro e Sistema. Sistema acompanha `prefers-color-scheme`, incluindo mudanças enquanto o site está aberto. A escolha é salva por navegador, separada dos dados da conta. No celular, uma barra inferior oferece acesso às seções principais. O script `public/theme-init.js` aplica a preferência antes da inicialização da interface para reduzir o flash do tema incorreto.
