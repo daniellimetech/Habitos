@@ -64,3 +64,5 @@ Hábitos em minutos oferecem **Iniciar sessão**: temporizador com pausa e regis
 **Programas** permite buscar e filtrar rotinas de foco, movimento, aprendizado, criatividade e bem-estar. Adicionar um programa cria seus hábitos diários com metas e horários; nomes já existentes não são duplicados. Depois, ajuste dias, metas e horários em Hábitos.
 
 O Histórico mostra barras por categoria, conclusão média e comparação em pontos percentuais com o período anterior (quando ambos têm dados). No ano, o gráfico agrupa os registros por mês; cada barra abre o último dia daquele mês incluído no período. Os novos campos são preservados no Supabase e nos backups, sem nova migração SQL.
+
+Para adicionar uma rotina recebida em JSON sem apagar hábitos ou histórico, use **Configurações → Adicionar hábitos de arquivo**. A opção **Importar backup** continua oferecendo substituição completa com confirmação. Reimportar o mesmo arquivo na opção aditiva não duplica IDs existentes.
