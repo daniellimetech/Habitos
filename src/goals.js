@@ -18,3 +18,10 @@ export function toggleCompletion(h,date){
  if(h.goal)progress[date]=completed?0:h.goal.target;
  return {...h,...(h.goal?{progress}:{}),logs:completed?h.logs.filter(d=>d!==date):[...h.logs,date]};
 }
+
+export function adjustAmount(h,date,delta,today=key()){
+ if(!h.goal||!Number.isFinite(delta))throw new Error('Ajuste inválido.');
+ const current=amountFor(h,date);
+ const next=delta>0?Math.min(h.goal.target,current+delta):Math.max(0,current+delta);
+ return recordAmount(h,date,next,today);
+}

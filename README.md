@@ -57,7 +57,7 @@ O seletor de tema no cabeçalho, nas configurações e no login oferece Claro, E
 
 ## Metas, sessões e programas
 
-Em Novo hábito/Editar hábito, configure horário opcional e uma meta em minutos, copos, páginas, passos, vezes ou ml. No dia escolhido, clique na quantidade/barra para registrar progresso parcial. Ao atingir a meta, o dia conta como concluído; o botão de conclusão também preenche a meta inteira. Os horários ordenam a rotina, sem enviar notificações.
+Em Novo hábito/Editar hábito, configure horário opcional e uma meta em minutos, copos, páginas, passos, vezes ou ml. No dia escolhido, clique na quantidade/barra para registrar progresso parcial. Ao atingir a meta, o dia conta como concluído; o botão + registra uma unidade por clique e o botão − corrige a contagem. A conclusão aparece somente quando a meta é atingida. Os horários ordenam a rotina, sem enviar notificações.
 
 Hábitos em minutos oferecem **Iniciar sessão**: temporizador com pausa e registro do tempo realizado, adicionado ao progresso existente. A sessão precisa ser salva e não sobrevive a recarregar/fechar a página. Apenas conclusões completas geram XP. Alterar metas preserva os registros anteriores.
 
