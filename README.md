@@ -68,3 +68,11 @@ O Histórico mostra barras por categoria, conclusão média e comparação em po
 Para adicionar uma rotina recebida em JSON sem apagar hábitos ou histórico, use **Configurações → Adicionar hábitos de arquivo**. A opção **Importar backup** continua oferecendo substituição completa com confirmação. Reimportar o mesmo arquivo na opção aditiva não duplica IDs existentes.
 
 Se não conseguir baixar um arquivo, use **Configurações → Colar rotina**. Cole uma atividade por linha (`05:45 | Acordar`), escolha os dias, revise e confirme. Hábitos existentes são preservados e repetições do mesmo nome/horário são ignoradas.
+
+## Dashboard de foco e revisão
+
+O dashboard sugere um próximo hábito pendente de hoje, priorizando os que já têm progresso parcial, depois horários que já chegaram, horários futuros e hábitos sem horário. O botão de foco abre o temporizador, o registro de quantidade ou leva ao hábito, conforme seu tipo.
+
+Os indicadores comparam os 7 dias completos anteriores a hoje com os 7 anteriores a eles. Alertas de reajuste usam as últimas 14 datas encerradas, exigem pelo menos 3 oportunidades programadas por hábito e conclusão abaixo de 60%. Boa constância usa pelo menos 80%, com o mesmo mínimo. Hábitos novos não são classificados como problemáticos por estarem pendentes hoje. A análise usa a frequência atual e não afirma que falta de registro seja falta de execução.
+
+O mapa permite abrir qualquer data programada no calendário ou editar um hábito. A lista diária pode ser filtrada por pendentes, em andamento e concluídos. Minutos restantes contam apenas metas em minutos. Os cálculos são feitos sobre os dados já existentes, sem nova migração SQL.
