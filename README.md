@@ -76,3 +76,7 @@ O dashboard sugere um próximo hábito pendente de hoje, priorizando os que já 
 Os indicadores comparam os 7 dias completos anteriores a hoje com os 7 anteriores a eles. Alertas de reajuste usam as últimas 14 datas encerradas, exigem pelo menos 3 oportunidades programadas por hábito e conclusão abaixo de 60%. Boa constância usa pelo menos 80%, com o mesmo mínimo. Hábitos novos não são classificados como problemáticos por estarem pendentes hoje. A análise usa a frequência atual e não afirma que falta de registro seja falta de execução.
 
 O mapa permite abrir qualquer data programada no calendário ou editar um hábito. A lista diária pode ser filtrada por pendentes, em andamento e concluídos. Minutos restantes contam apenas metas em minutos. Os cálculos são feitos sobre os dados já existentes, sem nova migração SQL.
+
+## Atalho no iPhone
+
+O app usa o nome curto **Ritmo**, ícone PNG próprio para Apple Touch (180px), favicon e manifesto com modo standalone. Após publicar, abra a URL de produção no Safari → Compartilhar → Adicionar à Tela de Início (mantenha “Abrir como App” ativado quando disponível). Atalhos antigos podem manter o nome e ícone anteriores: remova apenas o atalho antigo da tela inicial e adicione o site novamente. O atalho não habilita funcionamento offline; a conta continua usando o Supabase.
