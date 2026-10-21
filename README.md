@@ -80,3 +80,7 @@ O mapa permite abrir qualquer data programada no calendário ou editar um hábit
 ## Atalho no iPhone
 
 O app usa o nome curto **Ritmo**, ícone PNG próprio para Apple Touch (180px), favicon e manifesto com modo standalone. Após publicar, abra a URL de produção no Safari → Compartilhar → Adicionar à Tela de Início (mantenha “Abrir como App” ativado quando disponível). Atalhos antigos podem manter o nome e ícone anteriores: remova apenas o atalho antigo da tela inicial e adicione o site novamente. O atalho não habilita funcionamento offline; a conta continua usando o Supabase.
+
+## Ordem dos hábitos
+
+No calendário, dashboard ou lista de Hábitos, clique em **Organizar** e use ↑/↓ para mover as atividades. A ordem manual é salva junto com os hábitos e vale para todos os dias; horários, metas e registros são preservados. Com filtros ativos, as setas trocam os itens visíveis, mantendo as posições dos ocultos. Antes da primeira mudança, a lista segue os horários. Novos hábitos sem posição manual aparecem após os já organizados. A ordem também é preservada nos backups e no banco, sem migração SQL adicional.

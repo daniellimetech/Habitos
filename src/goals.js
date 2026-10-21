@@ -2,6 +2,7 @@ import {key} from './dates.js';
 export const units=['minutos','copos','páginas','passos','vezes','ml'];
 export function extraFields(h){
  const extra={};
+ if(h.order!==undefined){if(!Number.isInteger(h.order)||h.order<0||h.order>1000000)throw new Error('Posição inválida.');extra.order=h.order;}
  if(h.time!==undefined&&h.time!==''){if(typeof h.time!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(h.time))throw new Error('Horário inválido.');extra.time=h.time;}
  if(h.goal!==undefined&&h.goal!==null){if(typeof h.goal!=='object'||!Number.isFinite(h.goal.target)||h.goal.target<=0||h.goal.target>100000||!units.includes(h.goal.unit))throw new Error('Meta inválida.');extra.goal={target:h.goal.target,unit:h.goal.unit};}
  if(h.progress!==undefined){if(!h.progress||typeof h.progress!=='object'||Array.isArray(h.progress))throw new Error('Progresso inválido.');const entries=Object.entries(h.progress);if(entries.some(([date,n])=>!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(n)||n<0||n>100000))throw new Error('Progresso inválido.');extra.progress=Object.fromEntries(entries);}
