@@ -12,3 +12,11 @@ export function moveHabit(habits,id,direction,visibleIds){
  [sorted[a],sorted[b]]=[sorted[b],sorted[a]];
  return sorted.map((h,order)=>({...h,order}));
 }
+export function moveHabitTo(habits,id,targetId,visibleIds){
+ const sorted=orderedHabits(habits),visible=new Set(visibleIds),subset=sorted.filter(h=>visible.has(h.id));
+ const from=subset.findIndex(h=>h.id===id),to=subset.findIndex(h=>h.id===targetId);
+ if(from<0||to<0||from===to)return habits;
+ const [moved]=subset.splice(from,1);subset.splice(to,0,moved);
+ let index=0;
+ return sorted.map(h=>visible.has(h.id)?subset[index++]:h).map((h,order)=>({...h,order}));
+}
