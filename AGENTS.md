@@ -9,6 +9,8 @@ O usuário pediu explicitamente que melhorias sejam feitas e apresentadas uma po
 - Correções e verificações da etapa em análise fazem parte dela; não adicione outras funcionalidades enquanto aguarda a aprovação.
 - Se houver uma lista de melhorias, preserve-a, mas não implemente toda a lista de uma vez.
 
-## Melhoria em avaliação
+## Etapas da revisão inspirada no Productive
 
-A primeira etapa da revisão inspirada no Productive é compactar o dashboard: destacar o progresso de hoje, o próximo hábito e a lista diária; manter análises detalhadas recolhidas. Mostrar a prévia e aguardar aprovação antes de implementar agrupamento por períodos do dia, gestos de deslizar, motivos para não concluir, nova navegação ou outras melhorias propostas.
+1. Dashboard compacto: aprovado pelo usuário com “Ok” após a prévia.
+2. Em avaliação: agrupar a lista diária em Manhã, Tarde, Noite e Sem horário, com filtro por período e ordem manual preservada dentro dos grupos. Mostrar a prévia e aguardar aprovação explícita.
+3. Ainda não autorizadas para implementação: gestos de deslizar, motivos para não concluir, nova navegação e demais melhorias propostas. Não avançar antes da aprovação da etapa 2.
