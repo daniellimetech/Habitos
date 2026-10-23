@@ -12,5 +12,5 @@ O usuário pediu explicitamente que melhorias sejam feitas e apresentadas uma po
 ## Etapas da revisão inspirada no Productive
 
 1. Dashboard compacto: aprovado pelo usuário com “Ok” após a prévia.
-2. Em avaliação: agrupar a lista diária em Manhã, Tarde, Noite e Sem horário, com filtro por período e ordem manual preservada dentro dos grupos. Mostrar a prévia e aguardar aprovação explícita.
+2. Em avaliação: opção 1 escolhida pelo usuário: grupos recolhíveis, na ordem Sem horário, Manhã, Tarde e Noite, com filtro por período e ordem manual preservada dentro dos grupos. Sem horário inicia aberto; os demais iniciam recolhidos. Mostrar a prévia e aguardar aprovação explícita.
 3. Ainda não autorizadas para implementação: gestos de deslizar, motivos para não concluir, nova navegação e demais melhorias propostas. Não avançar antes da aprovação da etapa 2.
