@@ -12,5 +12,6 @@ O usuário pediu explicitamente que melhorias sejam feitas e apresentadas uma po
 ## Etapas da revisão inspirada no Productive
 
 1. Dashboard compacto: aprovado pelo usuário com “Ok” após a prévia.
-2. Em avaliação: opção 1 escolhida pelo usuário: grupos recolhíveis, na ordem Sem horário, Manhã, Tarde e Noite, com filtro por período e ordem manual preservada dentro dos grupos. Sem horário inicia aberto; os demais iniciam recolhidos. Mostrar a prévia e aguardar aprovação explícita.
-3. Ainda não autorizadas para implementação: gestos de deslizar, motivos para não concluir, nova navegação e demais melhorias propostas. Não avançar antes da aprovação da etapa 2.
+2. Grupos recolhíveis (Sem horário primeiro): aprovados pelo usuário com “Próximo”.
+3. Em avaliação: deslizar para a direita revela Concluir ou +1 unidade; para a esquerda revela Desfazer ou −1 unidade. O usuário toca na ação revelada para confirmar. Preservar rolagem vertical, arrastar pelos pontos e botões existentes. Mostrar prévia e aguardar aprovação.
+4. Ainda não autorizadas: motivos para não concluir, nova navegação e demais melhorias. Não avançar antes da aprovação da etapa 3.
