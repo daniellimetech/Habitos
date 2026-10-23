@@ -15,3 +15,7 @@ O usuário pediu explicitamente que melhorias sejam feitas e apresentadas uma po
 2. Grupos recolhíveis (Sem horário primeiro): aprovados pelo usuário com “Próximo”.
 3. Em avaliação: deslizar para a direita revela Concluir ou +1 unidade; para a esquerda revela Desfazer ou −1 unidade. O usuário toca na ação revelada para confirmar. Preservar rolagem vertical, arrastar pelos pontos e botões existentes. Mostrar prévia e aguardar aprovação.
 4. Ainda não autorizadas: motivos para não concluir, nova navegação e demais melhorias. Não avançar antes da aprovação da etapa 3.
+
+## Etapa atual de layout
+
+O usuário redirecionou a próxima etapa para reformular o layout conforme referências: ícones maiores, mais fluidez e menos informações. Trabalhar na tela diária (Início e lista do Calendário), preservando as funções. Mostrar resultado e aguardar aprovação antes de outras telas ou funcionalidades.
