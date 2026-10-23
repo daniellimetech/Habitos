@@ -85,16 +85,6 @@ O app usa o nome curto **Ritmo**, ícone PNG próprio para Apple Touch (180px), 
 
 No calendário, dashboard ou lista de Hábitos, segure o ícone de pontos ao lado do hábito por um instante e arraste para a nova posição. No computador, arraste com o mouse. A posição só é salva ao soltar; cancelar não altera a ordem. A rolagem por toque continua disponível fora do ícone. Como alternativa, clique em **Organizar** e use ↑/↓. Pelo teclado, foque o ícone, pressione Espaço, mova com as setas e confirme com Espaço (Escape cancela). A ordem manual é salva junto com os hábitos e vale para todos os dias; horários, metas e registros são preservados. Com filtros ativos, as setas trocam os itens visíveis, mantendo as posições dos ocultos. Antes da primeira mudança, a lista segue os horários. Novos hábitos sem posição manual aparecem após os já organizados. A ordem também é preservada nos backups e no banco, sem migração SQL adicional.
 
-## Relatórios narrativos
-
-Abra **Relatórios** no menu (ou o atalho no dashboard), escolha semana, mês ou trimestre e uma data dentro do período. Clique em **Gerar relatório** para criar uma narrativa com oportunidades, conclusões, progresso parcial, comparação e análise por hábito. **Período anterior** navega e gera o relatório anterior. Você pode baixar o texto Markdown ou imprimir/salvar em PDF pelo navegador.
-
-Semanas seguem segunda a domingo; meses/trimestres seguem o calendário. Hoje fica de fora. A comparação usa os mesmos hábitos já acompanhados no início do período anterior e o mesmo número de dias transcorridos, limitado ao fim do período anterior. Exige ao menos 3 oportunidades em cada período; mudanças de frequência atual podem afetar o resultado.
-
-Padrões por dia da semana usam uma janela complementar de 56 dias encerrada no fim do relatório, com ao menos 3 oportunidades em cada dia comparado e diferença mínima de 20 pontos percentuais. O app não registra horário real de execução e não pode inferir o melhor horário causalmente. Sugestões de horário são experimentos ancorados em um hábito com pelo menos 80% de constância e 3 oportunidades, usando o horário planejado atual + 10 minutos, quando cabe no mesmo dia. O editor abre com a sugestão, mas a gravação depende de confirmação.
-
-Conceitos usados: *Hábitos Atômicos*, James Clear (facilidade, pistas visíveis, satisfação e empilhamento); *O Poder do Hábito*, Charles Duhigg (deixa, rotina e recompensa). Os textos são aplicações gerais desses conceitos e não citações ou recomendações pessoais dos autores. A narrativa é gerada localmente por regras explicáveis; não requer serviço de IA, credenciais novas ou migração SQL. Cada relatório é um retrato no momento da geração; gere novamente após editar dados. Exportações incluem todos os hábitos, mesmo quando a tela está filtrada.
-
 ## Períodos do dia
 
 Na lista diária do dashboard e do calendário, os hábitos ficam agrupados por horário: Manhã (05:00–11:59), Tarde (12:00–17:59), Noite (18:00–04:59) e Sem horário. O filtro de período pode ser combinado com o estado do hábito no dashboard. A ordem manual é preservada dentro de cada grupo; arrastar ou usar setas não altera o horário. Para trocar um hábito de período, edite o horário. A tela Hábitos mantém a organização geral da lista.
