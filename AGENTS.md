@@ -23,5 +23,5 @@ O usuário redirecionou a próxima etapa para reformular o layout conforme refer
 ## Pedidos de 23/10 — uma alteração por etapa
 
 1. Abas por período (opção 2): aprovadas pelo usuário com “Boa gostei”.
-2. Em avaliação: remover Relatórios do sistema, incluindo entradas de navegação, acessos internos e código exclusivo da função. Preservar hábitos, registros, análises do dashboard e Histórico. Mostrar resultado e aguardar aprovação.
-3. Pendente após aprovação: Histórico visual por hábito, com cartões e mapa de constância (quadrados por dia), inspirado nas referências enviadas. Usar dados reais e distinguir registros parciais, dias não programados e dias sem registro.
+2. Remoção de Relatórios aprovada pelo usuário com “Pode seguir”.
+3. Em avaliação: Histórico visual por hábito, com cartões e mapa de constância (quadrados por dia), inspirado nas referências enviadas. Usar dados reais e distinguir registros parciais, dias não programados e dias sem registro.

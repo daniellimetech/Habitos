@@ -157,3 +157,50 @@ button.period-heading small{white-space:nowrap}
 @media(max-width:650px){.daily-layout .period-tabs{margin:0 0 12px;border:0;padding:5px;gap:3px}.daily-layout .period-tabs button{min-height:62px}.daily-layout .period-tabs strong{font-size:11px}}
 
 @media(max-width:650px){.mobile-bottom-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.mobile-bottom-nav button{min-width:0;font-size:9px}}
+/* Histórico por hábito: cada quadrado é um dia real. */
+.history-controls{margin-bottom:22px;gap:16px;flex-wrap:wrap}
+.habit-history-heading h2{font-size:21px;letter-spacing:-.7px}
+.habit-history-heading p{font-size:12px;color:var(--muted);margin:8px 0 15px}
+.habit-history-legend{display:flex;flex-wrap:wrap;gap:10px 16px;font-size:10px;color:var(--muted);margin-bottom:18px}
+.habit-history-legend>span{display:flex;align-items:center;gap:6px}
+.habit-history-legend i{width:10px;height:10px;display:block;border-radius:3px;background:var(--line)}
+.habit-history-legend .done{background:var(--accent)}
+.habit-history-legend .partial{background:color-mix(in srgb,var(--accent) 45%,var(--surface));outline:1px solid var(--accent)}
+.habit-history-legend .off{background:var(--surface-alt);outline:1px dashed var(--subtle)}
+.habit-history-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.habit-history-card{--heat:#258662;--cell:18px;min-width:0;border:1px solid color-mix(in srgb,var(--heat) 30%,var(--line));border-radius:27px;padding:22px;background:linear-gradient(145deg,color-mix(in srgb,var(--heat) 17%,var(--surface)),color-mix(in srgb,var(--heat) 6%,var(--surface)));color:var(--ink);overflow:hidden}
+.habit-history-card.green{--heat:#1eaf87}.habit-history-card.blue{--heat:#438de8}.habit-history-card.purple{--heat:#a063de}.habit-history-card.orange{--heat:#ce9b24}
+[data-theme=dark] .habit-history-card.green{--heat:#45d4ac}[data-theme=dark] .habit-history-card.blue{--heat:#7ca9ff}[data-theme=dark] .habit-history-card.purple{--heat:#cb9aff}[data-theme=dark] .habit-history-card.orange{--heat:#f3ca65}
+header.habit-history-card-heading{display:flex;gap:13px;align-items:center;height:auto;padding:0;margin:0 0 22px;background:transparent;border:0}
+.habit-history-card-heading .habit-icon{width:49px;height:49px;flex-shrink:0;border-radius:17px;display:grid;place-items:center}
+.habit-history-card-heading h3{flex:1;font-size:16px;margin:0;line-height:1.5;min-width:0;overflow-wrap:anywhere;letter-spacing:-.3px}
+.history-edit{display:grid;place-items:center;min-width:36px;min-height:44px;color:var(--muted);border-radius:12px}
+.history-edit:hover{background:var(--surface-alt)}
+.history-today-done{width:30px;height:30px;display:grid;place-items:center;color:var(--heat);background:color-mix(in srgb,var(--heat) 16%,transparent);border-radius:10px;flex-shrink:0}
+.habit-heatmap-layout{display:flex;gap:7px;align-items:flex-start}
+.heatmap-weekdays{display:grid;grid-template-rows:repeat(7,var(--cell));gap:3px;flex-shrink:0;color:var(--muted);font-size:8px;align-items:center;padding-top:2px}
+.habit-heatmap-scroll{overflow-x:auto;min-width:0;flex:1;scrollbar-width:thin;padding:2px 2px 8px;overscroll-behavior-x:contain}
+.habit-heatmap{display:grid;grid-template-rows:repeat(7,var(--cell));grid-template-columns:repeat(var(--weeks),var(--cell));grid-auto-flow:column;gap:3px;width:max-content}
+.heatmap-cell{width:var(--cell);height:var(--cell);min-width:0;padding:0;border-radius:4px;background:color-mix(in srgb,var(--heat) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--heat) 9%,transparent)}
+.heatmap-cell.done{background:var(--heat);border-color:color-mix(in srgb,var(--heat) 80%,white);box-shadow:inset 0 1px 2px #fff3}
+.heatmap-cell.partial{background:color-mix(in srgb,var(--heat) 45%,var(--surface));border:1px solid var(--heat);background-image:linear-gradient(135deg,transparent 40%,#ffffff55 41%,#ffffff55 53%,transparent 54%)}
+.heatmap-cell.off,.heatmap-cell.untracked{background:color-mix(in srgb,var(--heat) 4%,var(--surface));border:1px dashed color-mix(in srgb,var(--heat) 20%,transparent)}
+.heatmap-cell.pending{outline:1px solid var(--heat);outline-offset:-1px}
+.heatmap-cell.blank{visibility:hidden}
+.heatmap-cell.selected{outline:2px solid var(--ink);outline-offset:1px}
+.heatmap-cell:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.habit-history-card-footer{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;color:var(--muted);font-size:10px;line-height:1.7;margin-top:10px}
+.habit-history-card-footer>span:last-child{color:var(--ink)}
+.history-cell-detail{display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--surface) 75%,transparent);padding:13px;border-radius:15px;margin-top:16px;flex-wrap:wrap}
+.history-cell-detail>div{flex:1;min-width:120px}
+.history-cell-detail strong{font-size:11px;display:block}
+.history-cell-detail span{display:block;font-size:10px;color:var(--muted);margin-top:5px}
+.history-cell-detail>button{min-height:36px;color:var(--ink);font-size:10px}
+.heatmap-open-day{display:flex;align-items:center;gap:3px}
+.habit-history-note{font-size:11px;line-height:1.8;color:var(--muted);margin:18px 0 24px;max-width:740px}
+.history-overview{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:0 20px 20px}
+.history-overview:not([open]){padding-bottom:0}
+.history-overview>summary{font-size:13px;font-weight:600;padding:20px 0;cursor:pointer;color:var(--muted)}
+.history-overview .history-hero{margin-top:5px}
+@media(max-width:1000px){.habit-history-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.habit-history-card{--cell:17px;padding:18px;border-radius:25px}.habit-history-grid{gap:17px}.habit-history-card-heading h3{font-size:15px}.habit-history-card-heading .habit-icon{width:45px;height:45px;border-radius:15px}.habit-history-heading h2{font-size:20px}.history-controls{align-items:flex-start}.history-controls .filters{padding:0;gap:5px}.history-controls .filters button{padding:9px 11px;font-size:11px}.history-controls label{font-size:11px}.history-overview{padding-left:12px;padding-right:12px}.habit-history-card-footer{font-size:9px}.history-today-done{width:25px;height:25px}.history-edit{min-width:30px}}

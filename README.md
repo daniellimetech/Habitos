@@ -88,3 +88,7 @@ No calendário, dashboard ou lista de Hábitos, segure o ícone de pontos ao lad
 ## Períodos do dia
 
 Na lista diária do dashboard e do calendário, os hábitos ficam agrupados por horário: Manhã (05:00–11:59), Tarde (12:00–17:59), Noite (18:00–04:59) e Sem horário. O filtro de período pode ser combinado com o estado do hábito no dashboard. A ordem manual é preservada dentro de cada grupo; arrastar ou usar setas não altera o horário. Para trocar um hábito de período, edite o horário. A tela Hábitos mantém a organização geral da lista.
+
+## Histórico visual por hábito
+
+A aba Histórico abre cartões coloridos com mapas diários de constância, por padrão nos últimos 90 dias. Use Semana, Mês, Trimestre ou Ano e o seletor de hábito para ajustar a visualização. As colunas representam semanas (segunda a domingo); mapas maiores permitem deslizar na horizontal. Os quadrados diferenciam conclusão, progresso parcial, ausência de registro e dias não programados; os anteriores ao acompanhamento ficam esmaecidos. Tocar em um quadrado mostra o detalhe sem alterar registros. **Abrir dia** abre o calendário no dia e período do hábito; o lápis abre o editor. Conquistas, gráficos e revisão continuam em **Visão geral e conquistas**. As taxas usam a frequência atual; registros anteriores fora dessa frequência continuam visíveis no mapa.
