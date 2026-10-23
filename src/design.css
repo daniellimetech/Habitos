@@ -147,3 +147,13 @@ button.period-heading small{white-space:nowrap}
  .daily-layout .dashboard-overview .day-summary p{font-size:11px}
  .daily-layout .dashboard-analysis>summary{min-height:38px;padding:10px 14px}
 }
+/* Opção 2: um período por vez, com progresso visível em cada aba. */
+.period-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:5px;margin:0 22px 14px;background:var(--surface-alt);border:1px solid var(--line);border-radius:20px}
+.period-tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:64px;padding:11px 4px;border-radius:15px;color:var(--muted);transition:background .18s,color .18s}
+.period-tabs strong{font-size:11px;white-space:nowrap;font-weight:600}
+.period-tabs span{font-size:10px;opacity:.8}
+.period-tabs .selected{background:var(--accent);color:white;box-shadow:0 3px 9px #0001}
+[data-theme=dark] .period-tabs .selected{color:#102d27}
+.period-tabs button:focus-visible{outline-offset:-3px}
+#period-panel:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:15px}
+@media(max-width:650px){.daily-layout .period-tabs{margin:0 0 12px;border:0;padding:5px;gap:3px}.daily-layout .period-tabs button{min-height:62px}.daily-layout .period-tabs strong{font-size:11px}}

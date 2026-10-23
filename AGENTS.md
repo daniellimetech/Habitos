@@ -19,3 +19,9 @@ O usuário pediu explicitamente que melhorias sejam feitas e apresentadas uma po
 ## Etapa atual de layout
 
 O usuário redirecionou a próxima etapa para reformular o layout conforme referências: ícones maiores, mais fluidez e menos informações. Trabalhar na tela diária (Início e lista do Calendário), preservando as funções. Mostrar resultado e aguardar aprovação antes de outras telas ou funcionalidades.
+
+## Pedidos de 23/10 — uma alteração por etapa
+
+1. Em avaliação: trocar grupos recolhíveis pela opção 2 (abas Sem horário, Manhã, Tarde e Noite). Mostrar um período por vez, preservar registros e ordenação. Mostrar resultado e aguardar aprovação.
+2. Pendente após aprovação: remover Relatórios do sistema, incluindo entradas de navegação e acessos internos.
+3. Pendente após aprovação: Histórico visual por hábito, com cartões e mapa de constância (quadrados por dia), inspirado nas referências enviadas. Usar dados reais e distinguir registros parciais, dias não programados e dias sem registro.
