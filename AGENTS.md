@@ -29,3 +29,7 @@ O usuário redirecionou a próxima etapa para reformular o layout conforme refer
 ## Etapa atual — registro de quantidade em lote
 
 O usuário pediu registrar o total de uma vez ou completar a meta num passo. Expor “Registrar total” e “Completar meta” na lista, preservando +/− e permitindo corrigir o total. O total informado substitui o acumulado do dia; não somar novamente. Não mudar unidades/metas existentes sem pedido. Mostrar resultado e aguardar aprovação para outras mudanças.
+
+## Agenda executável recorrente
+
+O usuário solicitou criar os hábitos da agenda enviada: Faculdade seg/qua 19h (60min); TCE-GO seg20h diagnóstico (60min), ter19h Banco de Dados (90min), qua20h Lógica (60min), sex19h Engenharia de Software (90min), sáb08h questões mistas (60min); Professor Online sáb09h (120min); GR qui20h sem duração informada; família/culto/descanso domingo sem horário. Nove hábitos recorrentes. Sem sessão autenticada do usuário no executor, fornecer programa pronto em Programas → Agenda executável para adicionar os hábitos pela conta do usuário, sem substituir dados. Não afirmar que o banco pessoal já foi alterado.

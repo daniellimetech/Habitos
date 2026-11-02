@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {programs,addProgram,programHasHabit} from './programs.js';
+import {validateImport,scheduled} from './model.js';
+const plan=programs.find(p=>p.id==='study-weekly');
+test('agenda semanal respeita dias, durações e horários sem inventar meta para GR/domingo',()=>{let id=0;const hs=addProgram([],plan,'2026-11-02',()=>String(++id));assert.equal(hs.length,9);assert.equal(validateImport(hs).length,9);for(let week=0;week<2;week++)for(let day=1;day<=7;day++){const date=new Date(2026,10,1+day+7*week,12),due=hs.filter(h=>scheduled(h,date));assert.equal(due.length,[2,1,2,1,1,2,1][day-1]);}assert.deepEqual(hs[0].days,[1,3]);assert.equal(hs[0].time,'19:00');assert.equal(hs[2].goal.target,90);assert.equal(hs[4].time,'20:00');assert.equal(hs[4].goal,undefined);assert.equal(hs[7].goal.target,120);assert.equal(hs[8].time,undefined);assert.equal(hs[8].goal,undefined);});
+test('adicionar agenda é idempotente e preserva registros e frequências dos existentes',()=>{let id=0;const existing=[{id:'old',name:'Faculdade',days:[0],time:'19:00',category:'Aprendizado',color:'green',logs:['2026-11-01']}],before=JSON.stringify(existing),next=addProgram(existing,plan,'2026-11-02',()=>String(++id));assert.equal(next.length,10);assert.equal(JSON.stringify(existing),before);assert.deepEqual(addProgram(next,plan),next);assert.equal(programHasHabit(existing,plan,plan.habits[0]),false);});

@@ -211,3 +211,5 @@ header.habit-history-card-heading{display:flex;gap:13px;align-items:center;heigh
 .progress-save-actions{display:flex;flex-direction:column;gap:10px}
 .progress-save-actions button{min-height:44px;justify-content:center}
 @media(max-width:650px){.daily-layout .quantity-shortcuts{gap:4px 10px}.daily-layout .quantity-shortcuts button{font-size:10px;min-height:32px}}
+
+.program-card li small{white-space:normal;text-align:right;line-height:1.6;max-width:48%;flex-shrink:0}
