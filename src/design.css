@@ -204,3 +204,10 @@ header.habit-history-card-heading{display:flex;gap:13px;align-items:center;heigh
 .history-overview .history-hero{margin-top:5px}
 @media(max-width:1000px){.habit-history-grid{grid-template-columns:1fr}}
 @media(max-width:650px){.habit-history-card{--cell:17px;padding:18px;border-radius:25px}.habit-history-grid{gap:17px}.habit-history-card-heading h3{font-size:15px}.habit-history-card-heading .habit-icon{width:45px;height:45px;border-radius:15px}.habit-history-heading h2{font-size:20px}.history-controls{align-items:flex-start}.history-controls .filters{padding:0;gap:5px}.history-controls .filters button{padding:9px 11px;font-size:11px}.history-controls label{font-size:11px}.history-overview{padding-left:12px;padding-right:12px}.habit-history-card-footer{font-size:9px}.history-today-done{width:25px;height:25px}.history-edit{min-width:30px}}
+
+.quantity-shortcuts{display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;margin-top:9px}
+.quantity-shortcuts button{display:inline-flex;align-items:center;gap:4px;padding:5px 0;font-size:10px;color:var(--accent-ink);text-align:left;min-height:28px}
+.quantity-shortcuts button:hover:enabled{text-decoration:underline}
+.progress-save-actions{display:flex;flex-direction:column;gap:10px}
+.progress-save-actions button{min-height:44px;justify-content:center}
+@media(max-width:650px){.daily-layout .quantity-shortcuts{gap:4px 10px}.daily-layout .quantity-shortcuts button{font-size:10px;min-height:32px}}

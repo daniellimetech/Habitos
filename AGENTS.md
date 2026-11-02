@@ -25,3 +25,7 @@ O usuário redirecionou a próxima etapa para reformular o layout conforme refer
 1. Abas por período (opção 2): aprovadas pelo usuário com “Boa gostei”.
 2. Remoção de Relatórios aprovada pelo usuário com “Pode seguir”.
 3. Em avaliação: Histórico visual por hábito, com cartões e mapa de constância (quadrados por dia), inspirado nas referências enviadas. Usar dados reais e distinguir registros parciais, dias não programados e dias sem registro.
+
+## Etapa atual — registro de quantidade em lote
+
+O usuário pediu registrar o total de uma vez ou completar a meta num passo. Expor “Registrar total” e “Completar meta” na lista, preservando +/− e permitindo corrigir o total. O total informado substitui o acumulado do dia; não somar novamente. Não mudar unidades/metas existentes sem pedido. Mostrar resultado e aguardar aprovação para outras mudanças.
