@@ -33,3 +33,7 @@ O usuário pediu registrar o total de uma vez ou completar a meta num passo. Exp
 ## Agenda executável recorrente
 
 O usuário solicitou criar os hábitos da agenda enviada: Faculdade seg/qua 19h (60min); TCE-GO seg20h diagnóstico (60min), ter19h Banco de Dados (90min), qua20h Lógica (60min), sex19h Engenharia de Software (90min), sáb08h questões mistas (60min); Professor Online sáb09h (120min); GR qui20h sem duração informada; família/culto/descanso domingo sem horário. Nove hábitos recorrentes. Sem sessão autenticada do usuário no executor, fornecer programa pronto em Programas → Agenda executável para adicionar os hábitos pela conta do usuário, sem substituir dados. Não afirmar que o banco pessoal já foi alterado.
+
+## Importação sem download para a conta da Lola
+
+Downloads da conversa falham no iPhone. O usuário quer adicionar os 28 hábitos transcritos à conta em que está conectado, lolaargollo@gmail.com, e não quer disponibilizá-los como programa público. Adicionar opção genérica em Ajustes para colar JSON, revisar os hábitos e a conta conectada antes de salvar com merge (sem substituir os atuais). Não embutir rotina pessoal nem e-mail no código. Os 19 horários incertos continuam sem horário.
