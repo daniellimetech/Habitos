@@ -215,3 +215,18 @@ header.habit-history-card-heading{display:flex;gap:13px;align-items:center;heigh
 .program-card li small{white-space:normal;text-align:right;line-height:1.6;max-width:48%;flex-shrink:0}
 
 .paste-account{overflow-wrap:anywhere;background:var(--surface-alt);padding:12px;border-radius:12px;font-size:12px;line-height:1.7}
+
+.date-browser{min-width:0;margin:0 22px 16px}
+.date-browser-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;color:var(--muted);font-size:10px}
+.date-browser-tools>button{color:var(--accent-ink);padding:8px 0;font-size:10px}
+.date-browser-tools>span{text-transform:capitalize}
+.date-browser-tools>div{display:flex;gap:2px}
+.date-browser-tools>div button{display:grid;place-items:center;min-width:30px;min-height:32px;border-radius:9px;background:var(--surface-alt)}
+.week-strip.date-strip,.daily-layout .week-strip.date-strip{display:flex;position:relative;overflow-x:auto;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scrollbar-width:thin;gap:7px;padding:0 0 6px;margin:0;border:0;scroll-snap-type:x proximity}
+.week-strip.date-strip>button{flex:0 0 calc((100% - 42px)/7);min-width:46px;scroll-snap-align:start}
+.daily-layout .date-browser{margin-bottom:14px}
+@media(max-width:650px){.daily-layout .date-browser{margin:0 0 12px}.date-browser-tools{font-size:9px}.date-browser-tools>button{font-size:9px}}
+.dashboard-grid>#habit-list{min-width:0;max-width:100%}
+.date-browser{max-width:calc(100% - 44px)}
+.week-strip.date-strip{width:100%;max-width:100%}
+@media(max-width:650px){.daily-layout .date-browser{max-width:100%}}

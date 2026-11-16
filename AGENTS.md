@@ -37,3 +37,11 @@ O usuário solicitou criar os hábitos da agenda enviada: Faculdade seg/qua 19h 
 ## Importação sem download para a conta da Lola
 
 Downloads da conversa falham no iPhone. O usuário quer adicionar os 28 hábitos transcritos à conta em que está conectado, lolaargollo@gmail.com, e não quer disponibilizá-los como programa público. Adicionar opção genérica em Ajustes para colar JSON, revisar os hábitos e a conta conectada antes de salvar com merge (sem substituir os atuais). Não embutir rotina pessoal nem e-mail no código. Os 19 horários incertos continuam sem horário.
+
+## Faixa de datas — correção aprovada
+
+O usuário esclareceu que NÃO quer ordem decrescente. A faixa deve manter datas crescentes, da esquerda para a direita, abrir rolada até hoje e permitir deslizar para consultar dias anteriores. Botão Hoje deve recentralizar a faixa mesmo quando a seleção já é hoje. Preservar registros e gráfico cronológico.
+
+## Próxima etapa solicitada durante a faixa de datas
+
+O usuário enviou referências e pediu uma tela de calendário grande, como conteúdo principal, com nomes legíveis dos hábitos nos dias, em vez da lista de hábitos com calendário pequeno embaixo. Também pediu lembretes pontuais para uma data específica, sem repetição diária obrigatória. Preservar esses pedidos para a etapa seguinte à correção da faixa, apresentando uma alteração por vez.
