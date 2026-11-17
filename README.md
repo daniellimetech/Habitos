@@ -100,3 +100,5 @@ No menu lateral, **Calendário** abre a grade mensal grande com nomes e horário
 **Novo lembrete** cria um item para uma única data e horário. Ele é salvo na mesma conta, pode ser editado/excluído e não se repete nem participa de XP e estatísticas de hábitos. Os novos campos são preservados nos backups e no JSONB existente, sem migração SQL.
 
 O Ritmo não envia push em segundo plano nesta versão. Para alertas com o app fechado, use **Adicionar ao calendário do celular** no lembrete: o arquivo ICS contém um evento sem recorrência e um alarme (no horário, 10/30/60 minutos antes). Confirme a importação e o alerta no aplicativo de calendário do dispositivo. Alterar ou excluir o lembrete no Ritmo não altera automaticamente uma cópia já importada no calendário externo.
+
+O calendário oferece **Dia**, **Semana** e **Mês**. Dia mostra a agenda completa da data selecionada; Semana mostra todos os itens de segunda a domingo; Mês mantém a grade com resumo por dia. As setas avançam/voltam conforme o modo e Hoje volta à data atual.
