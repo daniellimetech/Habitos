@@ -1,7 +1,7 @@
 import {extraFields} from './goals.js';
 import {key} from './dates.js';
 export {key};
-export function scheduled(habit, date) { return habit.days.includes(date.getDay()); }
+export function scheduled(habit, date) { return habit.type==='reminder'?habit.date===key(date):habit.days.includes(date.getDay()); }
 export function streak(habit, today = new Date()) {
  let count=0; const date=new Date(today); date.setHours(12,0,0,0);
  if(scheduled(habit,date) && !habit.logs.includes(key(date))) date.setDate(date.getDate()-1);

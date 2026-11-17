@@ -19,7 +19,7 @@ export const programs=[
 ];
 export function programHasHabit(habits,program,item){
  const [name,,,time,days]=item;
- return habits.some(h=>h.name.toLocaleLowerCase('pt-BR')===name.toLocaleLowerCase('pt-BR')&&(!program.weekly||(h.time||'')===(time||'')&&h.days.length===days.length&&days.every(d=>h.days.includes(d))));
+ return habits.some(h=>h.type!=='reminder'&&h.name.toLocaleLowerCase('pt-BR')===name.toLocaleLowerCase('pt-BR')&&(!program.weekly||(h.time||'')===(time||'')&&h.days.length===days.length&&days.every(d=>h.days.includes(d))));
 }
 export function addProgram(habits,program,date=key(),makeId=()=>crypto.randomUUID()){
  const added=program.habits.filter(item=>!programHasHabit(habits,program,item)).map(([name,target,unit,time,days,category])=>({id:makeId(),name,category:category||program.category,color:program.color,...(time?{time}:{}),...(target?{goal:{target,unit}}:{}),days:days?[...days]:[0,1,2,3,4,5,6],createdAt:date,logs:[]}));

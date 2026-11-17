@@ -1,3 +1,7 @@
+# Orientações atuais de colaboração
+
+O usuário autorizou explicitamente seguir sem pedir aprovação a cada etapa: “pode ajeitar, não precisa ficar me pedindo”. Essa instrução substitui as regras anteriores de aguardar aprovação entre alterações. Avançar até concluir o calendário grande e os lembretes pontuais; perguntar somente por informação indispensável. Não afirmar que uma mudança está feita antes de implementar e verificar.
+
 # Orientações de colaboração
 
 O usuário pediu explicitamente que melhorias sejam feitas e apresentadas uma por vez.

@@ -2,6 +2,8 @@ import {key} from './dates.js';
 export const units=['minutos','copos','páginas','passos','vezes','ml'];
 export function extraFields(h){
  const extra={};
+ if(h.type!==undefined){if(h.type!=='reminder')throw new Error('Tipo inválido.');if(typeof h.date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(h.date)||!Number.isFinite(new Date(h.date+'T12:00:00').getTime())||key(new Date(h.date+'T12:00:00'))!==h.date||!h.time||!/^([01]\d|2[0-3]):[0-5]\d$/.test(h.time)||![0,10,30,60].includes(h.notifyBefore??10)||h.goal)throw new Error('Lembrete inválido.');extra.type='reminder';extra.date=h.date;extra.notifyBefore=h.notifyBefore??10;}
+
  if(h.order!==undefined){if(!Number.isInteger(h.order)||h.order<0||h.order>1000000)throw new Error('Posição inválida.');extra.order=h.order;}
  if(h.time!==undefined&&h.time!==''){if(typeof h.time!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(h.time))throw new Error('Horário inválido.');extra.time=h.time;}
  if(h.goal!==undefined&&h.goal!==null){if(typeof h.goal!=='object'||!Number.isFinite(h.goal.target)||h.goal.target<=0||h.goal.target>100000||!units.includes(h.goal.unit))throw new Error('Meta inválida.');extra.goal={target:h.goal.target,unit:h.goal.unit};}

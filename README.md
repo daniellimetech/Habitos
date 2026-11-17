@@ -92,3 +92,11 @@ Na lista diária do dashboard e do calendário, os hábitos ficam agrupados por 
 ## Histórico visual por hábito
 
 A aba Histórico abre cartões coloridos com mapas diários de constância, por padrão nos últimos 90 dias. Use Semana, Mês, Trimestre ou Ano e o seletor de hábito para ajustar a visualização. As colunas representam semanas (segunda a domingo); mapas maiores permitem deslizar na horizontal. Os quadrados diferenciam conclusão, progresso parcial, ausência de registro e dias não programados; os anteriores ao acompanhamento ficam esmaecidos. Tocar em um quadrado mostra o detalhe sem alterar registros. **Abrir dia** abre o calendário no dia e período do hábito; o lápis abre o editor. Conquistas, gráficos e revisão continuam em **Visão geral e conquistas**. As taxas usam a frequência atual; registros anteriores fora dessa frequência continuam visíveis no mapa.
+
+## Calendário e lembretes pontuais
+
+No menu lateral, **Calendário** abre a grade mensal grande com nomes e horários dos hábitos em cada dia. Toque em um dia ou em “ver dia” para consultar todos os itens, registrar progresso e concluir. No celular a grade permite deslizar horizontalmente.
+
+**Novo lembrete** cria um item para uma única data e horário. Ele é salvo na mesma conta, pode ser editado/excluído e não se repete nem participa de XP e estatísticas de hábitos. Os novos campos são preservados nos backups e no JSONB existente, sem migração SQL.
+
+O Ritmo não envia push em segundo plano nesta versão. Para alertas com o app fechado, use **Adicionar ao calendário do celular** no lembrete: o arquivo ICS contém um evento sem recorrência e um alarme (no horário, 10/30/60 minutos antes). Confirme a importação e o alerta no aplicativo de calendário do dispositivo. Alterar ou excluir o lembrete no Ritmo não altera automaticamente uma cópia já importada no calendário externo.

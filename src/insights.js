@@ -1,6 +1,7 @@
 import {key,scheduled} from './model.js';
 import {amountFor} from './goals.js';
 export function dashboardInsights(habits,now=new Date()){
+ habits=habits.filter(h=>h.type!=='reminder');
  const today=key(now),minutes=now.getHours()*60+now.getMinutes();
  const start=h=>h.createdAt||[...h.logs,...Object.keys(h.progress||{})].filter(d=>d<=today).sort()[0]||today;
  const dateAt=offset=>{const d=new Date(now);d.setHours(12,0,0,0);d.setDate(d.getDate()+offset);return d;};
